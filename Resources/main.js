@@ -40,8 +40,8 @@ var cocos2dApp = cc.Application.extend({
 
         cc.EGLView.getInstance()._adjustSizeToBrowser();
         var screenSize = cc.EGLView.getInstance().getFrameSize();
-        var resourceSize = cc.size(480, 800);
-        var designSize = cc.size(480, 800);
+        var resourceSize = cc.size(pageInfo.info.canvasWidth, pageInfo.info.canvasHeight);
+        var designSize = cc.size(pageInfo.info.canvasWidth, pageInfo.info.canvasHeight);
 
         var searchPaths = [];
         var resDirOrders = [];
@@ -84,3 +84,30 @@ var cocos2dApp = cc.Application.extend({
 });
 
 var myApp = new cocos2dApp(MyScene);
+
+function Person(name){
+    this.name = name;
+};
+
+function meme(per)
+{
+    this.name = "bb";
+    this.prototype = per;
+}
+
+(function(){
+    var per = new Person("aa");
+    var me = new meme(per);
+    for (var obj in Person.prototype)
+    {
+        console.log(obj);
+    }
+    console.log(Person.prototype);
+    console.log(meme.prototype);
+    //me.name = "ha";
+    //delete per["name"];
+    console.log(per.name);
+    console.log(me.name);
+})();
+
+

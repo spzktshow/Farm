@@ -50,8 +50,8 @@ var MyLayer = cc.Layer.extend({
 
         // add a "close" icon to exit the progress. it's an autorelease object
         var closeItem = cc.MenuItemImage.create(
-            "res/CloseNormal.png",
-            "res/CloseSelected.png",
+            s_CloseNormal,
+            s_CloseSelected,
             function () {
                 cc.log("close button was clicked.");
             },this);
@@ -73,7 +73,7 @@ var MyLayer = cc.Layer.extend({
         this.addChild(this.helloLabel, 5);
 
         // add "Helloworld" splash screen"
-        this.sprite = cc.Sprite.create("res/HelloWorld.png");
+        this.sprite = cc.Sprite.create(s_HelloWorld);
         this.sprite.setAnchorPoint(cc.p(0.5, 0.5));
         this.sprite.setPosition(cc.p(size.width / 2, size.height / 2));
 
